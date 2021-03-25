@@ -5,22 +5,26 @@ import android.util.Log
 object Taly {
     private var tag = "LOGTALY"
     fun m(m: String) {
-        Log.d(tag, m)
+        showMessage(m)
     }
     fun m(t: Throwable) {
-        Log.d(tag, t.toString())
+        showMessage(t.toString())
     }
     fun m(i: Int) {
-        Log.d(tag, i.toString())
+        showMessage(i.toString())
     }
     fun m(l: Long) {
-        Log.d(tag, l.toString())
+        showMessage(l.toString())
     }
     fun m(a: Any) {
-        Log.d(tag, a.toString())
+        showMessage(a.toString())
     }
     fun tag(tag: String): Taly {
         this.tag = tag
         return Taly
+    }
+    fun showMessage(message: String) {
+        Log.d(tag, message)
+        tag = "LOGTALY"
     }
 }

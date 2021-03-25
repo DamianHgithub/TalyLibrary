@@ -3,20 +3,24 @@ package com.example.taly
 import android.util.Log
 
 object Taly {
-    private const val TAG = "LOGTALY"
+    private var tag = "LOGTALY"
     fun m(m: String) {
-        Log.d(TAG, m)
+        Log.d(tag, m)
     }
     fun m(t: Throwable) {
-        Log.d(TAG, t.toString())
+        Log.d(tag, t.toString())
     }
     fun m(i: Int) {
-        Log.d(TAG, i.toString())
+        Log.d(tag, i.toString())
     }
     fun m(l: Long) {
-        Log.d(TAG, l.toString())
+        Log.d(tag, l.toString())
     }
     fun m(a: Any) {
-        Log.d(TAG, a.toString())
+        Log.d(tag, a.toString())
+    }
+    fun tag(tag: String): Taly {
+        this.tag = tag
+        return Taly
     }
 }

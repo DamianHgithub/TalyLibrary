@@ -3,20 +3,27 @@ package com.example.taly
 import android.util.Log
 
 object Taly {
-    object TalyLog {
-        fun m(m: String) {
+    interface TALY_INTERFACE {
+        fun m(m: String)
+        fun m(t: Throwable)
+        fun m(i: Int)
+        fun m(l: Long)
+        fun m(a: Any)
+    }
+    private val TalyLog: TALY_INTERFACE = object: TALY_INTERFACE {
+        override fun m(m: String) {
             showMessage(m)
         }
-        fun m(t: Throwable) {
+        override fun m(t: Throwable) {
             showMessage(t.toString())
         }
-        fun m(i: Int) {
+        override fun m(i: Int) {
             showMessage(i.toString())
         }
-        fun m(l: Long) {
+        override fun m(l: Long) {
             showMessage(l.toString())
         }
-        fun m(a: Any) {
+        override fun m(a: Any) {
             showMessage(a.toString())
         }
     }
@@ -36,7 +43,7 @@ object Taly {
     fun m(a: Any) {
         showMessage(a.toString())
     }
-    fun tag(tag: String): TalyLog {
+    fun tag(tag: String): TALY_INTERFACE {
         this.tag = tag
         return TalyLog
     }

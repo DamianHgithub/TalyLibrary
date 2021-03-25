@@ -9,6 +9,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Taly.tag("test").m(1)
-        Taly.m(2)
     }
 }

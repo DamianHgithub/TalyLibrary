@@ -2,6 +2,7 @@ package com.example.talyexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.taly.Taly
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
